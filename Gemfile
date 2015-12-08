@@ -34,6 +34,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Authentication
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook', '2.0.0'
 
 # Templating
 gem 'haml-rails'
