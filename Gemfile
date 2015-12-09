@@ -33,9 +33,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 # Authentication
-gem 'devise'
+# gem 'devise'
+# gem 'omniauth'
+# gem 'omniauth-oauth2', '~> 1.4'
+# gem 'omniauth-google-oauth2'
 gem 'omniauth'
-gem 'omniauth-facebook', '2.0.0'
+gem 'omniauth-google-oauth2', git: 'https://github.com/zquestz/omniauth-google-oauth2.git'
+gem 'omniauth-facebook', '~>3.0.0'
+gem 'omniauth-oauth2', '~> 1.3.1'
+gem 'devise', '~> 3.5', '>= 3.5.2'
 
 # Templating
 gem 'haml-rails'
