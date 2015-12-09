@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  use_doorkeeper
   # devise_for :users
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
 
@@ -18,5 +19,6 @@ Rails.application.routes.draw do
     end
   end
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+  get '/current_user_doorkeeper' => 'application#current_user_doorkeeper'
 
 end

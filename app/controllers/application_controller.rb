@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :authenticate_user!
+  before_action :doorkeeper_authorize!, only: :current_user_doorkeeper
+
+  def current_user_doorkeeper
+    render json: User.find(doorkeeper_token.resource_owner_id).as_json
+  end
 
   def ensure_signup_complete
       # Ensure we don't go into an infinite loop
